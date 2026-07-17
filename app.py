@@ -41,7 +41,7 @@ from pinecone_db import get_index
 from pinecone_db import upload_chunks
 from retriever import retrieve
 
-text = load_pdf("document.pdf")
+text = load_pdf("data/document.pdf")
 
 chunks = chunk_text(text)
 
