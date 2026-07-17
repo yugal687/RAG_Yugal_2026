@@ -76,6 +76,16 @@ question = "Who unified Nepal?"
 
 results = retrieve(index, question)
 
+contexts = []
+
+for match in results["matches"]:
+
+    contexts.append(match["metadata"]["text"])
+
+context = "\n\n".join(contexts)
+
+print(context)
+
 print("\nRetrieved Chunks:\n")
 
 for match in results["matches"]:
