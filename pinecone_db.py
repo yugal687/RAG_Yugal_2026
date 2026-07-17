@@ -1,5 +1,5 @@
+import os
 from pinecone import Pinecone, ServerlessSpec
-
 from config import PINECONE_API_KEY, INDEX_NAME
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
@@ -36,15 +36,18 @@ def get_index():
 #     index.upsert(vectors=[vector])
 #     print("Uploaded one vector!")
 
-def upload_chunks(index, chunks, embeddings):
+def upload_chunks(index, chunks, embeddings, source):
     vectors = []
+    document_name = os.path.splitext(source)[0]  # Get the document name without extension
     for i, (chunk, embedding) in enumerate(zip(chunks, embeddings)):
         vectors.append({
-            "id": f"chunk_{i}",
+            "id": f"{document_name}_chunk_{i}",
             "values": embedding.tolist(),
             "metadata": {
-                "text": chunk
+                "text": chunk,
+                "source": source,
+                "chunk_number": i
             }
         })
     index.upsert(vectors=vectors)
-    print(f"Uploaded {len(vectors)} vectors.")
+    print(f"Uploaded {len(vectors)} chunks from {source}.")

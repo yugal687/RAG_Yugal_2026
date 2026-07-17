@@ -1,25 +1,41 @@
+import os
+
 from pdf_loader import load_pdf
 from chunker import chunk_text
 from embeddings import create_embeddings
 from pinecone_db import get_index, upload_chunks
 
 
+DATA_FOLDER = "data"
+
+
 def index_documents():
-
-    text = load_pdf("data/document.pdf")
-
-    chunks = chunk_text(text)
-
-    embeddings = create_embeddings(chunks)
 
     index = get_index()
 
-    upload_chunks(
-        index,
-        chunks,
-        embeddings
-    )
+    for filename in os.listdir(DATA_FOLDER):
 
+        if not filename.lower().endswith(".pdf"):
+            continue
+
+        pdf_path = os.path.join(DATA_FOLDER, filename)
+
+        print(f"\nIndexing: {filename}")
+
+        text = load_pdf(pdf_path)
+
+        chunks = chunk_text(text)
+
+        embeddings = create_embeddings(chunks)
+
+        upload_chunks(
+            index=index,
+            chunks=chunks,
+            embeddings=embeddings,
+            source=filename
+        )
+
+    print("\nIndexing Complete!")
     print(index.describe_index_stats())
 
 
