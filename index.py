@@ -4,6 +4,7 @@ from pdf_loader import load_pdf
 from chunker import chunk_text
 from embeddings import create_embeddings
 from pinecone_db import get_index, upload_chunks
+from config import CHUNK_SIZE, CHUNK_OVERLAP
 
 
 DATA_FOLDER = "data"
@@ -24,7 +25,7 @@ def index_documents():
 
         text = load_pdf(pdf_path)
 
-        chunks = chunk_text(text)
+        chunks = chunk_text(text, chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
 
         embeddings = create_embeddings(chunks)
 
