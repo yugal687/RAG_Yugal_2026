@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "question": "Who unified Nepal?",
+        "expected_answer": "King Prithvi Narayan Shah unified Nepal."
+    },
+    {
+        "id": 2,
+        "question": "When did Prithvi Narayan Shah conquer Kathmandu Valley?",
+        "expected_answer": "1769."
+    },
+    {
+        "id": 3,
+        "question": "Where is Nepal located?",
+        "expected_answer": "South Asia."
+    },
+    {
+        "id": 4,
+        "question": "What is the capital of Nepal?",
+        "expected_answer": "Kathmandu."
+    },
+    {
+        "id": 5,
+        "question": "What mountain is the highest in the world?",
+        "expected_answer": "Mount Everest."
+    },
+    {
+        "id": 6,
+        "question": "Who started the campaign to unify Nepal?",
+        "expected_answer": "King Prithvi Narayan Shah."
+    },
+    {
+        "id": 7,
+        "question": "How many provinces does Nepal have?",
+        "expected_answer": "Seven."
+    },
+    {
+        "id": 8,
+        "question": "What is Nepal known for?",
+        "expected_answer": "Mount Everest and its rich cultural heritage."
+    },
+    {
+        "id": 9,
+        "question": "What country borders Nepal to the south?",
+        "expected_answer": "India."
+    },
+    {
+        "id": 10,
+        "question": "Who was born in Gorkha?",
+        "expected_answer": "King Prithvi Narayan Shah."
+    }
+]
