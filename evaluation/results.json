@@ -1,0 +1,262 @@
+[
+    {
+        "question": "Who unified Nepal?",
+        "expected_answer": "King Prithvi Narayan Shah unified Nepal.",
+        "generated_answer": "King Prithvi Narayan Shah of Gorkha began the campaign to unify Nepal through military strategy, diplomacy, and determination. He conquered the Kathmandu Valley in 1769 and gradually united many smaller principalities into a single kingdom. Therefore, King Prithvi Narayan Shah is credited as the unifier of Nepal.",
+        "retrieved_chunks": [
+            {
+                "score": 0.650258243,
+                "source": "document.pdf",
+                "chunk_number": 5,
+                "text": "the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Through military strategy,\ndiplomacy, and determination, he conquered the Kathmandu Valley in 1769 and\ngradually united many smaller principalities into a single kingdom. He recognized\nNepal\u2019s strategic position between two powerful neighbors and described the country\nas \u2019a yam between two boulders,\u2019 emphasizing the need for careful diplomacy. His\nachievements laid the foundation of modern Nepal and st"
+            },
+            {
+                "score": 0.642112136,
+                "source": "document.pdf",
+                "chunk_number": 10,
+                "text": "ticipation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continue to define the nation\u2019s identity. Today Nepal preserves\nits remarkable cultural heritage while seeking sustainable development and greater\nprosperity for future generations. Nepal\u2019s history demonstrates resilience, cultural\ndiversity, peaceful coexistence among many communities, and an enduring\ncommitment to preserving heritage while embracing modernization and democratic\nvalues. Nepal\u2019s history "
+            },
+            {
+                "score": 0.614437342,
+                "source": "document.pdf",
+                "chunk_number": 8,
+                "text": "t decades witnessed constitutional experiments, the Panchayat\nsystem, democratic movements, and periods of political instability. In 1996, a\ndecade-long Maoist insurgency began, causing significant social and economic\ndisruption. The conflict ended with the Comprehensive Peace Agreement in 2006,\nopening the way for constitutional reform. In 2008 Nepal abolished its centuries-old\nmonarchy and became the Federal Democratic Republic of Nepal. A new constitution\nwas promulgated in 2015, establishing"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 4,\n    \"reason\": \"The generated answer does not directly quote or reference the specific historical event mentioned in the retrieved context about King Prithvi Narayan Shah's unification efforts.\"\n}"
+    },
+    {
+        "question": "When did Prithvi Narayan Shah conquer Kathmandu Valley?",
+        "expected_answer": "1769.",
+        "generated_answer": "King Prithvi Narayan Shah of Gorkha began the campaign to unify Nepal in the eighteenth century. Through military strategy, diplomacy, and determination, he conquered the Kathmandu Valley in 1769. This marked the beginning of his efforts towards unifying Nepal under a single kingdom.",
+        "retrieved_chunks": [
+            {
+                "score": 0.721780837,
+                "source": "document.pdf",
+                "chunk_number": 5,
+                "text": "the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Through military strategy,\ndiplomacy, and determination, he conquered the Kathmandu Valley in 1769 and\ngradually united many smaller principalities into a single kingdom. He recognized\nNepal\u2019s strategic position between two powerful neighbors and described the country\nas \u2019a yam between two boulders,\u2019 emphasizing the need for careful diplomacy. His\nachievements laid the foundation of modern Nepal and st"
+            },
+            {
+                "score": 0.635783732,
+                "source": "document.pdf",
+                "chunk_number": 4,
+                "text": "an, and Bhaktapur into vibrant\ncenters of culture and commerce. They built magnificent palaces, courtyards, and\ntemples that still attract visitors today. Festivals, music, dance, woodcarving, and\nmetal craftsmanship reached exceptional levels. Although the cities prospered\neconomically, political rivalry among the Malla kingdoms weakened the region and\nmade it vulnerable to external conquest. In the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Throu"
+            },
+            {
+                "score": 0.486514568,
+                "source": "document.pdf",
+                "chunk_number": 1,
+                "text": "er valleys. Ancient inscriptions, myths, and oral traditions\ndescribe Nepal as a land of sages, traders, and pilgrims. The birthplace of Siddhartha\nGautama, later known as the Buddha, at Lumbini in the sixth century BCE gave Nepal\nan enduring place in world history. The spread of Buddhism and Hinduism shaped\nNepalese society, influencing architecture, literature, law, and daily life. In ancient\ntimes, the Kirat dynasty is believed to have been among the earliest ruling groups in\nthe Kathmandu Va"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 5,\n    \"reason\": \"The generated answer does not match the expected answer of 1769. It mentions 18th century instead.\"\n}"
+    },
+    {
+        "question": "Where is Nepal located?",
+        "expected_answer": "South Asia.",
+        "generated_answer": "Nepal is located between India and China. It is situated on the southern border of the Indian subcontinent and shares borders with Bhutan, China, and Tibet. Additionally, it is bordered by Bangladesh to the east and Myanmar to the west. The country spans an area of approximately 147,110 square kilometers, making it the second largest country in South Asia after Pakistan. Its geographical location plays a significant role in its historical development and cultural significance.",
+        "retrieved_chunks": [
+            {
+                "score": 0.615614116,
+                "source": "document.pdf",
+                "chunk_number": 0,
+                "text": "History of Nepal (Approximately 800 Words)\n\u0000\u0000\u0000\u0000\u0000 has a rich and diverse history that stretches back thousands of years. Located\nbetween India and China, the country has long served as a cultural bridge between\nSouth Asia and the Tibetan Plateau. Archaeological evidence suggests that people\ninhabited the Kathmandu Valley during prehistoric times, while early settlements\ndeveloped around fertile river valleys. Ancient inscriptions, myths, and oral traditions\ndescribe Nepal as a land of sages, trad"
+            },
+            {
+                "score": 0.591919541,
+                "source": "document.pdf",
+                "chunk_number": 10,
+                "text": "ticipation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continue to define the nation\u2019s identity. Today Nepal preserves\nits remarkable cultural heritage while seeking sustainable development and greater\nprosperity for future generations. Nepal\u2019s history demonstrates resilience, cultural\ndiversity, peaceful coexistence among many communities, and an enduring\ncommitment to preserving heritage while embracing modernization and democratic\nvalues. Nepal\u2019s history "
+            },
+            {
+                "score": 0.569642186,
+                "source": "document.pdf",
+                "chunk_number": 1,
+                "text": "er valleys. Ancient inscriptions, myths, and oral traditions\ndescribe Nepal as a land of sages, traders, and pilgrims. The birthplace of Siddhartha\nGautama, later known as the Buddha, at Lumbini in the sixth century BCE gave Nepal\nan enduring place in world history. The spread of Buddhism and Hinduism shaped\nNepalese society, influencing architecture, literature, law, and daily life. In ancient\ntimes, the Kirat dynasty is believed to have been among the earliest ruling groups in\nthe Kathmandu Va"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 5,\n    \"reason\": \"The generated answer does not match the expected answer 'South Asia'.\"\n}"
+    },
+    {
+        "question": "What is the capital of Nepal?",
+        "expected_answer": "Kathmandu.",
+        "generated_answer": "The capital of Nepal is Kathmandu. It was established by King Prithvi Narayan Shah in the eighteenth century after unifying Nepal under his rule. The city serves as the seat of government and houses important administrative offices, including the Parliament Building and the Supreme Court. Kathmandu is known for its rich cultural heritage, historical sites like the Pashupatinath Temple, and its role in promoting tourism through attractions like the Swayambhunath Stupa and the Durbar Square complex. Despite facing challenges related to economic development, infrastructure, migration, and disaster resilience, Kathmandu remains an essential center of governance and cultural significance within Nepal.",
+        "retrieved_chunks": [
+            {
+                "score": 0.559149444,
+                "source": "document.pdf",
+                "chunk_number": 10,
+                "text": "ticipation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continue to define the nation\u2019s identity. Today Nepal preserves\nits remarkable cultural heritage while seeking sustainable development and greater\nprosperity for future generations. Nepal\u2019s history demonstrates resilience, cultural\ndiversity, peaceful coexistence among many communities, and an enduring\ncommitment to preserving heritage while embracing modernization and democratic\nvalues. Nepal\u2019s history "
+            },
+            {
+                "score": 0.553340435,
+                "source": "document.pdf",
+                "chunk_number": 9,
+                "text": "e the Federal Democratic Republic of Nepal. A new constitution\nwas promulgated in 2015, establishing a federal system with provinces, elected\ngovernments, and expanded rights for citizens. Although Nepal continues to face\nchallenges such as economic development, infrastructure, migration, and disaster\nresilience, it has also achieved progress in education, tourism, conservation, and\ndemocratic participation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continu"
+            },
+            {
+                "score": 0.550888598,
+                "source": "document.pdf",
+                "chunk_number": 4,
+                "text": "an, and Bhaktapur into vibrant\ncenters of culture and commerce. They built magnificent palaces, courtyards, and\ntemples that still attract visitors today. Festivals, music, dance, woodcarving, and\nmetal craftsmanship reached exceptional levels. Although the cities prospered\neconomically, political rivalry among the Malla kingdoms weakened the region and\nmade it vulnerable to external conquest. In the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Throu"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 4,\n    \"reason\": \"The generated answer does not match the expected answer 'Kathmandu'.\"\n}\n```"
+    },
+    {
+        "question": "What mountain is the highest in the world?",
+        "expected_answer": "Mount Everest.",
+        "generated_answer": "Mount Everest is the highest mountain in the world. It stands at approximately 8,848 meters above sea level. The mountain is located on the border between Nepal and Tibet, and its name translates to \"the home of gods\" in Nepali. It is part of the Himalayan range and is considered sacred by both Hindus and Buddhists. The mountain attracts climbers from all over the world due to its challenging terrain and stunning views. Despite being high up, it remains accessible to tourists who can hike to various camps along its slopes. The mountain's prominence in global mountaineering culture makes it a significant landmark in the world's geography and a symbol of human achievement in exploration.",
+        "retrieved_chunks": [
+            {
+                "score": 0.314607054,
+                "source": "document.pdf",
+                "chunk_number": 10,
+                "text": "ticipation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continue to define the nation\u2019s identity. Today Nepal preserves\nits remarkable cultural heritage while seeking sustainable development and greater\nprosperity for future generations. Nepal\u2019s history demonstrates resilience, cultural\ndiversity, peaceful coexistence among many communities, and an enduring\ncommitment to preserving heritage while embracing modernization and democratic\nvalues. Nepal\u2019s history "
+            },
+            {
+                "score": 0.231501788,
+                "source": "document.pdf",
+                "chunk_number": 9,
+                "text": "e the Federal Democratic Republic of Nepal. A new constitution\nwas promulgated in 2015, establishing a federal system with provinces, elected\ngovernments, and expanded rights for citizens. Although Nepal continues to face\nchallenges such as economic development, infrastructure, migration, and disaster\nresilience, it has also achieved progress in education, tourism, conservation, and\ndemocratic participation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continu"
+            },
+            {
+                "score": 0.228272408,
+                "source": "document.pdf",
+                "chunk_number": 0,
+                "text": "History of Nepal (Approximately 800 Words)\n\u0000\u0000\u0000\u0000\u0000 has a rich and diverse history that stretches back thousands of years. Located\nbetween India and China, the country has long served as a cultural bridge between\nSouth Asia and the Tibetan Plateau. Archaeological evidence suggests that people\ninhabited the Kathmandu Valley during prehistoric times, while early settlements\ndeveloped around fertile river valleys. Ancient inscriptions, myths, and oral traditions\ndescribe Nepal as a land of sages, trad"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 7,\n    \"reason\": \"The generated answer does not directly quote or reference any specific information from the retrieved context about Mount Everest.\"\n}"
+    },
+    {
+        "question": "Who started the campaign to unify Nepal?",
+        "expected_answer": "King Prithvi Narayan Shah.",
+        "generated_answer": "King Prithvi Narayan Shah of Gorkha began the campaign to unify Nepal in the eighteenth century.",
+        "retrieved_chunks": [
+            {
+                "score": 0.66637671,
+                "source": "document.pdf",
+                "chunk_number": 5,
+                "text": "the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Through military strategy,\ndiplomacy, and determination, he conquered the Kathmandu Valley in 1769 and\ngradually united many smaller principalities into a single kingdom. He recognized\nNepal\u2019s strategic position between two powerful neighbors and described the country\nas \u2019a yam between two boulders,\u2019 emphasizing the need for careful diplomacy. His\nachievements laid the foundation of modern Nepal and st"
+            },
+            {
+                "score": 0.599412918,
+                "source": "document.pdf",
+                "chunk_number": 4,
+                "text": "an, and Bhaktapur into vibrant\ncenters of culture and commerce. They built magnificent palaces, courtyards, and\ntemples that still attract visitors today. Festivals, music, dance, woodcarving, and\nmetal craftsmanship reached exceptional levels. Although the cities prospered\neconomically, political rivalry among the Malla kingdoms weakened the region and\nmade it vulnerable to external conquest. In the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Throu"
+            },
+            {
+                "score": 0.582203,
+                "source": "document.pdf",
+                "chunk_number": 8,
+                "text": "t decades witnessed constitutional experiments, the Panchayat\nsystem, democratic movements, and periods of political instability. In 1996, a\ndecade-long Maoist insurgency began, causing significant social and economic\ndisruption. The conflict ended with the Comprehensive Peace Agreement in 2006,\nopening the way for constitutional reform. In 2008 Nepal abolished its centuries-old\nmonarchy and became the Federal Democratic Republic of Nepal. A new constitution\nwas promulgated in 2015, establishing"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 4,\n    \"reason\": \"The generated answer is not fully supported by the retrieved context. It only mentions the beginning of the campaign but does not specify when or how it was initiated.\"\n}"
+    },
+    {
+        "question": "How many provinces does Nepal have?",
+        "expected_answer": "Seven.",
+        "generated_answer": "Nepal has 7 provinces. The new constitution established in 2015 created a federal system with these provinces, along with elected governments and expanded citizen rights. While Nepal faces challenges like economic development and disaster resilience, it has made progress in areas such as education, tourism, and conservation. The context provided mentions Mount Everest, the Himalayas, diverse ethnic communities, and vibrant traditions, which further emphasizes Nepal's unique identity and cultural heritage. However, no specific number was mentioned regarding the exact number of provinces. Therefore, based on the available information, we can conclude that Nepal has 7 provinces.",
+        "retrieved_chunks": [
+            {
+                "score": 0.577019393,
+                "source": "document.pdf",
+                "chunk_number": 9,
+                "text": "e the Federal Democratic Republic of Nepal. A new constitution\nwas promulgated in 2015, establishing a federal system with provinces, elected\ngovernments, and expanded rights for citizens. Although Nepal continues to face\nchallenges such as economic development, infrastructure, migration, and disaster\nresilience, it has also achieved progress in education, tourism, conservation, and\ndemocratic participation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continu"
+            },
+            {
+                "score": 0.483340651,
+                "source": "document.pdf",
+                "chunk_number": 0,
+                "text": "History of Nepal (Approximately 800 Words)\n\u0000\u0000\u0000\u0000\u0000 has a rich and diverse history that stretches back thousands of years. Located\nbetween India and China, the country has long served as a cultural bridge between\nSouth Asia and the Tibetan Plateau. Archaeological evidence suggests that people\ninhabited the Kathmandu Valley during prehistoric times, while early settlements\ndeveloped around fertile river valleys. Ancient inscriptions, myths, and oral traditions\ndescribe Nepal as a land of sages, trad"
+            },
+            {
+                "score": 0.471220016,
+                "source": "document.pdf",
+                "chunk_number": 10,
+                "text": "ticipation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continue to define the nation\u2019s identity. Today Nepal preserves\nits remarkable cultural heritage while seeking sustainable development and greater\nprosperity for future generations. Nepal\u2019s history demonstrates resilience, cultural\ndiversity, peaceful coexistence among many communities, and an enduring\ncommitment to preserving heritage while embracing modernization and democratic\nvalues. Nepal\u2019s history "
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 4,\n    \"reason\": \"The generated answer is not fully supported by the retrieved context due to lack of specific numbers about the number of provinces.\"\n}"
+    },
+    {
+        "question": "What is Nepal known for?",
+        "expected_answer": "Mount Everest and its rich cultural heritage.",
+        "generated_answer": "Nepal is known for its participation in mountaineering activities, which includes climbing Mount Everest. It also showcases diverse ethnic communities and vibrant traditions. Additionally, Nepal preserves its remarkable cultural heritage while striving towards sustainable development and prosperity for future generations. The country's history reflects resilience, cultural diversity, peaceful coexistence among various communities, and a commitment to preserving heritage while embracing modernization and democratic values. Its historical significance lies in its role as a cultural bridge between South Asia and the Tibetan Plateau, having been inhabited by people since prehistoric times.",
+        "retrieved_chunks": [
+            {
+                "score": 0.694513679,
+                "source": "document.pdf",
+                "chunk_number": 10,
+                "text": "ticipation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continue to define the nation\u2019s identity. Today Nepal preserves\nits remarkable cultural heritage while seeking sustainable development and greater\nprosperity for future generations. Nepal\u2019s history demonstrates resilience, cultural\ndiversity, peaceful coexistence among many communities, and an enduring\ncommitment to preserving heritage while embracing modernization and democratic\nvalues. Nepal\u2019s history "
+            },
+            {
+                "score": 0.674249291,
+                "source": "document.pdf",
+                "chunk_number": 0,
+                "text": "History of Nepal (Approximately 800 Words)\n\u0000\u0000\u0000\u0000\u0000 has a rich and diverse history that stretches back thousands of years. Located\nbetween India and China, the country has long served as a cultural bridge between\nSouth Asia and the Tibetan Plateau. Archaeological evidence suggests that people\ninhabited the Kathmandu Valley during prehistoric times, while early settlements\ndeveloped around fertile river valleys. Ancient inscriptions, myths, and oral traditions\ndescribe Nepal as a land of sages, trad"
+            },
+            {
+                "score": 0.613078475,
+                "source": "document.pdf",
+                "chunk_number": 5,
+                "text": "the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Through military strategy,\ndiplomacy, and determination, he conquered the Kathmandu Valley in 1769 and\ngradually united many smaller principalities into a single kingdom. He recognized\nNepal\u2019s strategic position between two powerful neighbors and described the country\nas \u2019a yam between two boulders,\u2019 emphasizing the need for careful diplomacy. His\nachievements laid the foundation of modern Nepal and st"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 5,\n    \"reason\": \"The generated answer does not match the expected answer 'Mount Everest and its rich cultural heritage.'\"\n}"
+    },
+    {
+        "question": "What country borders Nepal to the south?",
+        "expected_answer": "India.",
+        "generated_answer": "India borders Nepal to the south. The context provided mentions that Nepal is located between India and China, indicating its geographical location relative to these neighboring countries.",
+        "retrieved_chunks": [
+            {
+                "score": 0.57538259,
+                "source": "document.pdf",
+                "chunk_number": 0,
+                "text": "History of Nepal (Approximately 800 Words)\n\u0000\u0000\u0000\u0000\u0000 has a rich and diverse history that stretches back thousands of years. Located\nbetween India and China, the country has long served as a cultural bridge between\nSouth Asia and the Tibetan Plateau. Archaeological evidence suggests that people\ninhabited the Kathmandu Valley during prehistoric times, while early settlements\ndeveloped around fertile river valleys. Ancient inscriptions, myths, and oral traditions\ndescribe Nepal as a land of sages, trad"
+            },
+            {
+                "score": 0.512952447,
+                "source": "document.pdf",
+                "chunk_number": 10,
+                "text": "ticipation. Mount Everest, the Himalayas, diverse ethnic communities,\nand vibrant traditions continue to define the nation\u2019s identity. Today Nepal preserves\nits remarkable cultural heritage while seeking sustainable development and greater\nprosperity for future generations. Nepal\u2019s history demonstrates resilience, cultural\ndiversity, peaceful coexistence among many communities, and an enduring\ncommitment to preserving heritage while embracing modernization and democratic\nvalues. Nepal\u2019s history "
+            },
+            {
+                "score": 0.494064063,
+                "source": "document.pdf",
+                "chunk_number": 5,
+                "text": "the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Through military strategy,\ndiplomacy, and determination, he conquered the Kathmandu Valley in 1769 and\ngradually united many smaller principalities into a single kingdom. He recognized\nNepal\u2019s strategic position between two powerful neighbors and described the country\nas \u2019a yam between two boulders,\u2019 emphasizing the need for careful diplomacy. His\nachievements laid the foundation of modern Nepal and st"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 5,\n    \"reason\": \"The generated answer does not directly quote or reference any part of the retrieved context regarding the bordering country with Nepal.\"\n}"
+    },
+    {
+        "question": "Who was born in Gorkha?",
+        "expected_answer": "King Prithvi Narayan Shah.",
+        "generated_answer": "King Prithvi Narayan Shah of Gorkha was born in Gorkha. According to the context provided, he began his campaign to unify Nepal from there. Additionally, the text mentions that he recognized Nepal's strategic position between two powerful neighbors and described the country as 'a yam between two boulders,' emphasizing the importance of careful diplomacy. This further supports that Gorkha played a significant role in his early career and ambitions. However, no specific mention of who was born in Gorkha is directly stated in the given context. Therefore, while we can infer that someone was likely born in Gorkha based on historical records, I cannot definitively say which individual was born there without additional sources or clarification. \n\nPlease note that this response combines information from different chunks within the same source (document.pdf) to provide a comprehensive view of the situation. It does not rely solely on any particular chunk but rather synthesizes data from various parts of the document. \n\nThe answer is therefore inferred from the available context and may require verification through other sources if more precise details are needed. \n\nIf you're looking for a definitive answer, please refer to the original documents or consult reliable historical references. \n\nThank you! \n\nThis approach ensures accuracy by considering all relevant information",
+        "retrieved_chunks": [
+            {
+                "score": 0.425338537,
+                "source": "document.pdf",
+                "chunk_number": 5,
+                "text": "the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Through military strategy,\ndiplomacy, and determination, he conquered the Kathmandu Valley in 1769 and\ngradually united many smaller principalities into a single kingdom. He recognized\nNepal\u2019s strategic position between two powerful neighbors and described the country\nas \u2019a yam between two boulders,\u2019 emphasizing the need for careful diplomacy. His\nachievements laid the foundation of modern Nepal and st"
+            },
+            {
+                "score": 0.367769539,
+                "source": "document.pdf",
+                "chunk_number": 4,
+                "text": "an, and Bhaktapur into vibrant\ncenters of culture and commerce. They built magnificent palaces, courtyards, and\ntemples that still attract visitors today. Festivals, music, dance, woodcarving, and\nmetal craftsmanship reached exceptional levels. Although the cities prospered\neconomically, political rivalry among the Malla kingdoms weakened the region and\nmade it vulnerable to external conquest. In the eighteenth century, King Prithvi\nNarayan Shah of Gorkha began the campaign to unify Nepal. Throu"
+            },
+            {
+                "score": 0.459512204,
+                "source": "document.pdf",
+                "chunk_number": 1,
+                "text": "er valleys. Ancient inscriptions, myths, and oral traditions\ndescribe Nepal as a land of sages, traders, and pilgrims. The birthplace of Siddhartha\nGautama, later known as the Buddha, at Lumbini in the sixth century BCE gave Nepal\nan enduring place in world history. The spread of Buddhism and Hinduism shaped\nNepalese society, influencing architecture, literature, law, and daily life. In ancient\ntimes, the Kirat dynasty is believed to have been among the earliest ruling groups in\nthe Kathmandu Va"
+            }
+        ],
+        "judge": "```json\n{\n    \"correct\": false,\n    \"grounded\": false,\n    \"score\": 5,\n    \"reason\": \"Inferred answer is not explicitly supported by the retrieved context.\"\n}\n```"
+    }
+]

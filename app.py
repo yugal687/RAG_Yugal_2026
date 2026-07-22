@@ -65,11 +65,18 @@ print("Connected to Pinecone!")
 
 print(index.describe_index_stats())
 
+# upload_chunks(
+#     index,
+#     chunks,
+#     embeddings
+# )
 upload_chunks(
-    index,
-    chunks,
-    embeddings
+    index=index,
+    chunks=chunks,
+    embeddings=embeddings,
+    source="document.pdf"
 )
+
 print(index.describe_index_stats())
 
 question = "Who unified Nepal?"
