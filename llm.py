@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
+MODEL_NAME = "google/gemma-3-4b-it"
 
 tokenizer = None
 model = None
@@ -31,7 +31,7 @@ def load_model():
     print("Model loaded successfully!")
 
 
-def generate_answer(prompt, max_new_tokens=256):
+def generate_answer(prompt, max_new_tokens=256, return_json=False):
     """
     Generate an answer using the loaded model.
     """
@@ -50,7 +50,9 @@ def generate_answer(prompt, max_new_tokens=256):
         **inputs,
         max_new_tokens=max_new_tokens,
         temperature=0.2,
-        do_sample=False
+        do_sample=False,
+        eos_token_id=tokenizer.eos_token_id,
+        pad_token_id=tokenizer.eos_token_id
     )
 
     # Decode only the generated tokens
@@ -60,5 +62,15 @@ def generate_answer(prompt, max_new_tokens=256):
         generated_tokens,
         skip_special_tokens=True
     ).strip()
+
+    if return_json:
+
+        start = answer.find("{")
+
+        end = answer.rfind("}")
+
+        if start != -1 and end != -1 and end > start:
+
+            answer = answer[start:end + 1]
 
     return answer

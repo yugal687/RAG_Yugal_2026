@@ -98,6 +98,6 @@ def judge_answer(
         retrieved_chunks
     )
 
-    response = generate_answer(prompt)
+    response = generate_answer(prompt, max_new_tokens=128, return_json=True)
 
     return response
