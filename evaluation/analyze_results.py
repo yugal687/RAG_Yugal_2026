@@ -8,7 +8,6 @@ def load_results(file_path):
     with open(file_path, "r") as file:
         return json.load(file)
 
-
 def main():
 
     results = load_results("evaluation/results.json")
