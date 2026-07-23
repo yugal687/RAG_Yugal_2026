@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-MODEL_NAME = "google/gemma-3-4b-it"
+MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
 
 tokenizer = None
 model = None
