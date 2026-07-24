@@ -40,9 +40,22 @@ def generate_answer(prompt, max_new_tokens=256, return_json=False):
         raise RuntimeError(
             "Model is not loaded. Call load_model() first."
         )
+    
+    messages = [
+        {
+            "role": "user",
+            "content": prompt
+        }
+    ]
+
+    formatted_prompt = tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=True
+    )
 
     inputs = tokenizer(
-        prompt,
+        formatted_prompt,
         return_tensors="pt"
     ).to(model.device)
 

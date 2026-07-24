@@ -26,17 +26,21 @@ def build_judge_prompt(
 
         1. An answer is CORRECT if it conveys the same meaning as the expected answer.
 
-        2. Do NOT require the exact same wording.
+        2.An answer is fully correct only if it includes all essential facts in the
+        expected answer. If it contains only part of the expected answer, reduce the
+        score and set correct to false when an essential fact is missing.
 
-        3. Extra correct information should NOT make an answer incorrect.
+        3. Do NOT require the exact same wording.
 
-        4. Mark correct=false only if the answer is wrong, contradicts the expected answer, or misses the main point.
+        4. Extra correct information should NOT make an answer incorrect.
 
-        5. An answer is GROUNDED if every important factual claim is supported by the retrieved context.
+        5. Mark correct=false only if the answer is wrong, contradicts the expected answer, or misses the main point.
 
-        6. If the answer adds unsupported facts that are not found in the retrieved context, grounded should be false.
+        6. An answer is GROUNDED if every important factual claim is supported by the retrieved context.
 
-        7. Score from 0 to 10:
+        7. If the answer adds unsupported facts that are not found in the retrieved context, grounded should be false.
+
+        8. Score from 0 to 10:
 
         - 9-10 = Excellent
 
@@ -75,6 +79,7 @@ def build_judge_prompt(
             "score": 10,
 
             "reason": "One short sentence."
+            The reason must be one short sentence.
 
         }}"""
 
@@ -98,6 +103,6 @@ def judge_answer(
         retrieved_chunks
     )
 
-    response = generate_answer(prompt, max_new_tokens=128, return_json=True)
+    response = generate_answer(prompt, max_new_tokens=192, return_json=True)
 
     return response

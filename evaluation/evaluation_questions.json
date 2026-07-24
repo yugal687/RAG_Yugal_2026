@@ -1,52 +1,42 @@
 [
     {
-        "id": 1,
-        "question": "Who unified Nepal?",
-        "expected_answer": "King Prithvi Narayan Shah unified Nepal."
+        "question": "Who began the campaign to unify Nepal?",
+        "expected_answer": "King Prithvi Narayan Shah of Gorkha."
     },
     {
-        "id": 2,
-        "question": "When did Prithvi Narayan Shah conquer Kathmandu Valley?",
+        "question": "When did Prithvi Narayan Shah conquer the Kathmandu Valley?",
         "expected_answer": "1769."
     },
     {
-        "id": 3,
-        "question": "Where is Nepal located?",
-        "expected_answer": "South Asia."
+        "question": "Between which two countries is Nepal located?",
+        "expected_answer": "India and China."
     },
     {
-        "id": 4,
-        "question": "What is the capital of Nepal?",
-        "expected_answer": "Kathmandu."
+        "question": "What phrase did Prithvi Narayan Shah use to describe Nepal?",
+        "expected_answer": "A yam between two boulders."
     },
     {
-        "id": 5,
-        "question": "What mountain is the highest in the world?",
-        "expected_answer": "Mount Everest."
+        "question": "When did the Maoist insurgency begin in Nepal?",
+        "expected_answer": "1996."
     },
     {
-        "id": 6,
-        "question": "Who started the campaign to unify Nepal?",
-        "expected_answer": "King Prithvi Narayan Shah."
+        "question": "What agreement ended the conflict in Nepal?",
+        "expected_answer": "The Comprehensive Peace Agreement."
     },
     {
-        "id": 7,
-        "question": "How many provinces does Nepal have?",
-        "expected_answer": "Seven."
+        "question": "When did Nepal become a Federal Democratic Republic?",
+        "expected_answer": "2008."
     },
     {
-        "id": 8,
-        "question": "What is Nepal known for?",
-        "expected_answer": "Mount Everest and its rich cultural heritage."
+        "question": "When was Nepal's new constitution promulgated?",
+        "expected_answer": "2015."
     },
     {
-        "id": 9,
-        "question": "What country borders Nepal to the south?",
-        "expected_answer": "India."
+        "question": "What system was established by Nepal's 2015 constitution?",
+        "expected_answer": "A federal system with provinces and elected governments."
     },
     {
-        "id": 10,
-        "question": "Who was born in Gorkha?",
-        "expected_answer": "King Prithvi Narayan Shah."
+        "question": "What continues to define Nepal's national identity?",
+        "expected_answer": "Mount Everest, the Himalayas, diverse ethnic communities, and vibrant traditions."
     }
 ]
