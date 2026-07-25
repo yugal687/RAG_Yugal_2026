@@ -15,12 +15,19 @@ type AskResponse = {
   sources: Source[];
 };
 
+type Message = {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  sources?: Source[];
+};
+
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
 
 export default function Home() {
   const [question, setQuestion] = useState("");
-  const [result, setResult] = useState<AskResponse | null>(null);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -29,14 +36,24 @@ export default function Home() {
 
     const cleanedQuestion = question.trim();
 
-    if (!cleanedQuestion) {
-      setError("Please enter a question.");
+    if (!cleanedQuestion || loading) {
       return;
     }
 
+    const userMessage: Message = {
+      id: crypto.randomUUID(),
+      role: "user",
+      content: cleanedQuestion,
+    };
+
+    setMessages((currentMessages) => [
+      ...currentMessages,
+      userMessage,
+    ]);
+
+    setQuestion("");
     setLoading(true);
     setError("");
-    setResult(null);
 
     try {
       const response = await fetch(`${API_URL}/ask`, {
@@ -57,7 +74,19 @@ export default function Home() {
         );
       }
 
-      setResult(data as AskResponse);
+      const result = data as AskResponse;
+
+      const assistantMessage: Message = {
+        id: crypto.randomUUID(),
+        role: "assistant",
+        content: result.answer,
+        sources: result.sources,
+      };
+
+      setMessages((currentMessages) => [
+        ...currentMessages,
+        assistantMessage,
+      ]);
     } catch (requestError) {
       const message =
         requestError instanceof Error
@@ -71,147 +100,184 @@ export default function Home() {
   }
 
   function clearConversation() {
+    setMessages([]);
     setQuestion("");
-    setResult(null);
     setError("");
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-10 text-slate-100">
-      <div className="mx-auto max-w-4xl">
-        <header className="mb-8 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
+    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100">
+      <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-5xl flex-col">
+        <header className="mb-6 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
             Local RAG Application
           </p>
 
-          <h1 className="text-3xl font-bold sm:text-5xl">
+          <h1 className="mt-2 text-3xl font-bold sm:text-5xl">
             Nepal History Assistant
           </h1>
 
-          <p className="mx-auto mt-4 max-w-2xl text-slate-400">
-            Ask questions about the indexed document. Answers are generated
-            using retrieved Pinecone context and Llama 3.2.
+          <p className="mx-auto mt-3 max-w-2xl text-slate-400">
+            Ask questions about the indexed document. Answers are grounded in
+            retrieved Pinecone context.
           </p>
         </header>
 
-        <section className="rounded-2xl border border-slate-800 bg-slate-900 p-5 shadow-xl sm:p-7">
-          <form onSubmit={handleSubmit}>
-            <label
-              htmlFor="question"
-              className="mb-2 block text-sm font-medium text-slate-300"
-            >
-              Your question
-            </label>
+        <section className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl">
+          <div className="flex-1 space-y-6 overflow-y-auto p-5 sm:p-7">
+            {messages.length === 0 && (
+              <div className="flex min-h-[380px] items-center justify-center">
+                <div className="max-w-lg text-center">
+                  <h2 className="text-2xl font-semibold">
+                    Start a conversation
+                  </h2>
 
-            <textarea
-              id="question"
-              value={question}
-              onChange={(event) => setQuestion(event.target.value)}
-              placeholder="Example: Who began the campaign to unify Nepal?"
-              rows={4}
-              maxLength={500}
-              disabled={loading}
-              className="w-full resize-none rounded-xl border border-slate-700 bg-slate-950 p-4 text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:opacity-60"
-            />
+                  <p className="mt-3 text-slate-400">
+                    Ask a question such as:
+                  </p>
 
-            <div className="mt-2 text-right text-xs text-slate-500">
-              {question.length}/500
-            </div>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setQuestion(
+                        "Who began the campaign to unify Nepal?"
+                      )
+                    }
+                    className="mt-5 rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-300 transition hover:border-blue-500 hover:text-white"
+                  >
+                    Who began the campaign to unify Nepal?
+                  </button>
+                </div>
+              </div>
+            )}
 
-            <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <button
-                type="submit"
-                disabled={loading || !question.trim()}
-                className="flex-1 rounded-xl bg-blue-600 px-5 py-3 font-semibold transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:bg-slate-700"
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={
+                  message.role === "user"
+                    ? "flex justify-end"
+                    : "flex justify-start"
+                }
               >
-                {loading ? "Generating answer..." : "Ask question"}
-              </button>
+                <div
+                  className={
+                    message.role === "user"
+                      ? "max-w-[85%] rounded-2xl rounded-br-md bg-blue-600 px-5 py-4 text-white"
+                      : "max-w-[90%] rounded-2xl rounded-bl-md border border-slate-700 bg-slate-950 px-5 py-4"
+                  }
+                >
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider opacity-70">
+                    {message.role === "user" ? "You" : "Assistant"}
+                  </p>
 
-              <button
-                type="button"
-                onClick={clearConversation}
+                  <p className="whitespace-pre-wrap leading-7">
+                    {message.content}
+                  </p>
+
+                  {message.role === "assistant" &&
+                    message.sources &&
+                    message.sources.length > 0 && (
+                      <div className="mt-5 border-t border-slate-800 pt-4">
+                        <p className="mb-3 text-sm font-semibold text-blue-300">
+                          Retrieved sources
+                        </p>
+
+                        <div className="space-y-3">
+                          {message.sources.map((source, index) => (
+                            <details
+                              key={`${message.id}-${source.chunk_number}-${index}`}
+                              className="rounded-xl border border-slate-800 bg-slate-900"
+                            >
+                              <summary className="cursor-pointer list-none p-4">
+                                <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
+                                  <div>
+                                    <p className="text-sm font-semibold">
+                                      {source.source}
+                                    </p>
+
+                                    <p className="mt-1 text-xs text-slate-400">
+                                      Chunk {source.chunk_number}
+                                    </p>
+                                  </div>
+
+                                  <span className="w-fit rounded-full bg-blue-950 px-3 py-1 text-xs text-blue-300">
+                                    Score: {source.score.toFixed(4)}
+                                  </span>
+                                </div>
+                              </summary>
+
+                              <div className="border-t border-slate-800 px-4 py-3">
+                                <p className="whitespace-pre-wrap text-sm leading-6 text-slate-300">
+                                  {source.text}
+                                </p>
+                              </div>
+                            </details>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                </div>
+              </div>
+            ))}
+
+            {loading && (
+              <div className="flex justify-start">
+                <div className="rounded-2xl rounded-bl-md border border-slate-700 bg-slate-950 px-5 py-4">
+                  <p className="text-sm text-slate-400">
+                    Generating answer...
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {error && (
+            <div className="border-t border-red-900 bg-red-950/40 px-5 py-3 text-sm text-red-200">
+              {error}
+            </div>
+          )}
+
+          <form
+            onSubmit={handleSubmit}
+            className="border-t border-slate-800 bg-slate-900 p-4 sm:p-5"
+          >
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <textarea
+                value={question}
+                onChange={(event) => setQuestion(event.target.value)}
+                placeholder="Ask a question about the document..."
+                rows={2}
+                maxLength={500}
                 disabled={loading}
-                className="rounded-xl border border-slate-700 px-5 py-3 font-semibold text-slate-300 transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                Clear
-              </button>
+                className="flex-1 resize-none rounded-xl border border-slate-700 bg-slate-950 p-4 text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 disabled:opacity-60"
+              />
+
+              <div className="flex gap-3 sm:flex-col">
+                <button
+                  type="submit"
+                  disabled={loading || !question.trim()}
+                  className="flex-1 rounded-xl bg-blue-600 px-6 py-3 font-semibold transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:bg-slate-700"
+                >
+                  {loading ? "Working..." : "Send"}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={clearConversation}
+                  disabled={loading || messages.length === 0}
+                  className="rounded-xl border border-slate-700 px-5 py-3 font-semibold text-slate-300 transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Clear
+                </button>
+              </div>
             </div>
+
+            <p className="mt-2 text-right text-xs text-slate-500">
+              {question.length}/500
+            </p>
           </form>
         </section>
-
-        {error && (
-          <section className="mt-6 rounded-2xl border border-red-900 bg-red-950/40 p-5">
-            <h2 className="font-semibold text-red-300">Request failed</h2>
-            <p className="mt-2 text-sm text-red-200">{error}</p>
-          </section>
-        )}
-
-        {result && (
-          <div className="mt-8 space-y-6">
-            <section className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <p className="text-sm font-semibold uppercase tracking-wider text-blue-400">
-                Answer
-              </p>
-
-              <h2 className="mt-3 text-lg font-semibold text-slate-300">
-                {result.question}
-              </h2>
-
-              <p className="mt-4 leading-8 text-slate-100">
-                {result.answer}
-              </p>
-            </section>
-
-            <section>
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-xl font-bold">Retrieved sources</h2>
-
-                <span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
-                  {result.sources.length} chunks
-                </span>
-              </div>
-
-              {result.sources.length === 0 ? (
-                <div className="rounded-2xl border border-slate-800 bg-slate-900 p-5 text-slate-400">
-                  No source chunks were returned.
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  {result.sources.map((source, index) => (
-                    <details
-                      key={`${source.source}-${source.chunk_number}-${index}`}
-                      className="group rounded-2xl border border-slate-800 bg-slate-900"
-                    >
-                      <summary className="cursor-pointer list-none p-5">
-                        <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
-                          <div>
-                            <p className="font-semibold">
-                              {source.source}
-                            </p>
-
-                            <p className="mt-1 text-sm text-slate-400">
-                              Chunk {source.chunk_number}
-                            </p>
-                          </div>
-
-                          <span className="w-fit rounded-full bg-blue-950 px-3 py-1 text-sm text-blue-300">
-                            Score: {source.score.toFixed(4)}
-                          </span>
-                        </div>
-                      </summary>
-
-                      <div className="border-t border-slate-800 px-5 py-4">
-                        <p className="whitespace-pre-wrap leading-7 text-slate-300">
-                          {source.text}
-                        </p>
-                      </div>
-                    </details>
-                  ))}
-                </div>
-              )}
-            </section>
-          </div>
-        )}
       </div>
     </main>
   );
