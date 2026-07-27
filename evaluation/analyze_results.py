@@ -45,13 +45,11 @@
 # if __name__ == "__main__":
 #     main()
 
-
 import json
 from pathlib import Path
 
 
 RESULTS_FILE = Path("results.json")
-
 
 def parse_judge(judge_value):
     """
