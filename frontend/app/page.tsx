@@ -225,7 +225,7 @@ export default function Home() {
               <div className="flex justify-start">
                 <div className="rounded-2xl rounded-bl-md border border-slate-700 bg-slate-950 px-5 py-4">
                   <p className="text-sm text-slate-400">
-                    Generating answer...
+                    Generating Answer...
                   </p>
                 </div>
               </div>
