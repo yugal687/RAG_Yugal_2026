@@ -42,6 +42,18 @@ Rules:
 
 6. Keep the answer concise and factual.
 
+7. Answer in 1 to 3 complete sentences.
+
+    For "Who is..." questions, explain:
+
+    - who the person is,
+
+    - their role,
+
+    - and why they are important,
+
+    using only the retrieved context.
+
 Retrieved Context
 =================
 {context_text}
