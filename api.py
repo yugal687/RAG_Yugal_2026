@@ -9,6 +9,7 @@ from llm import generate_answer, load_model
 from pinecone_db import get_index
 from prompt_builder import build_prompt
 from retriever import retrieve
+from question_rewriter import rewrite_question
 
 
 index = None
@@ -110,9 +111,28 @@ def ask_question(request: AskRequest) -> AskResponse:
         if index is None:
             raise RuntimeError("Pinecone index is not initialized.")
 
+        # Convert Pydantic history objects into dictionaries
+        history = [
+            {
+                "role": message.role,
+                "content": message.content,
+            }
+            for message in request.history
+        ]
+
+        # Rewrite follow-up questions into standalone questions
+        standalone_question = rewrite_question(
+            question=question,
+            history=history,
+        )
+
+        print(f"Original question: {question}")
+        print(f"Standalone question: {standalone_question}")
+
+        # Retrieve using the rewritten standalone question
         retrieval_results: dict[str, Any] = retrieve(
             index,
-            question
+            standalone_question
         )
 
         matches = retrieval_results.get("matches", [])
@@ -124,8 +144,9 @@ def ask_question(request: AskRequest) -> AskResponse:
                 sources=[]
             )
 
+        # Build the final RAG prompt using the standalone question
         prompt = build_prompt(
-            question=question,
+            question=standalone_question,
             results=retrieval_results
         )
 
