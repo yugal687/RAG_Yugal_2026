@@ -34,6 +34,14 @@ class AskResponse(BaseModel):
     answer: str
     sources: list[SourceResponse]
 
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
+class AskRequest(BaseModel):
+    question: str = Field(..., min_length=1, max_length=500)
+    history: list[ChatMessage] = []
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
